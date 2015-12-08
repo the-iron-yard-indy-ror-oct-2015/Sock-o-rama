@@ -20,6 +20,13 @@ ActiveRecord::Schema.define(version: 20151208211214) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "feedbacks", force: :cascade do |t|
+    t.integer  "user_id"
+    t.text     "body"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "socks", force: :cascade do |t|
     t.string   "size"
     t.string   "material"
