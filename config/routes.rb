@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :feedbacks
   resources :carts
   resources :user_sessions
   resources :users
