@@ -1,6 +1,8 @@
 class SocksController < ApplicationController
 
 def index
+  @socks=Sock.all
+  @sock = Sock.find(params[:id])
 end
 
 def show
