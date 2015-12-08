@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151208204352) do
+ActiveRecord::Schema.define(version: 20151208211214) do
 
   create_table "carts", force: :cascade do |t|
     t.integer  "sock_id"
@@ -36,6 +36,7 @@ ActiveRecord::Schema.define(version: 20151208204352) do
     t.string   "style"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string   "img_url"
   end
 
   create_table "user_sessions", force: :cascade do |t|

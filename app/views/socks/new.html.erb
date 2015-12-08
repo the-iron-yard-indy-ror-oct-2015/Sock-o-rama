@@ -1,0 +1,35 @@
+<h2> new socks go here!</h2>
+
+<%=bootstrap_form_for(@sock) do |f|%>
+  <div class="field">
+    <%= f.text_field :img_url %>
+  </div>
+  <div class="field">
+    <%= f.text_field :style %>
+  </div>
+  <div class="field">
+    <%= f.text_field :size, placeholder: "SM - M - LG - BF" %>
+  </div>
+  <div class="field">
+    <%= f.text_field :material %>
+  </div>
+  <div class="field">
+    <%= f.text_field :color %>
+  </div>
+  <div class="field">
+    <%= f.text_field :price %>
+  </div>
+  <div class="field">
+    <%= f.text_field :inventory, placeholder: "ID #" %>
+  </div>
+  <div class="actions">
+    <%= f.submit "Add Sock!" %>
+  </div>
+<%end%>
+
+
+
+
+t.string   "color"
+t.float    "price"
+t.integer  "inventory"
