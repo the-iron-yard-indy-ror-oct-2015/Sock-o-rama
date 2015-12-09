@@ -18,7 +18,7 @@ class FeedbacksController < ApplicationController
       redirect_to root_path
     else
       respond_to do |format|
-        format.js {render partial: "shared/feedback_form"}
+        format.js {}
       end
     end
   end
