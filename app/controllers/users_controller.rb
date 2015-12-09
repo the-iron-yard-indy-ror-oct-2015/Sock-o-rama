@@ -14,11 +14,12 @@ before_filter :require_user, :only => [ :edit, :update]
    @user = User.new(user_params)
    if @user.save
      respond_to do |format|
-       format.html { redirect_to @user, notice: 'User was successfully created.' }
+       format.html { redirect_to root_url, notice: 'User was successfully created.' }
        format.js { }
      end
    else
      respond_to do |format|
+       format.html { render :new }
        format.js {render 'errors'}
      end
    end
@@ -33,13 +34,14 @@ before_filter :require_user, :only => [ :edit, :update]
    respond_to do |format|
       if @user.update(user_params)
         format.html { redirect_to root_path, notice: 'User was successfully updated.' }
-      
+
       else
-        format.html { redirect_to root_path }
+        format.html { render :edit }
         format.json { render js: @user.errors, status: :unprocessable_entity }
       end
     end
  end
+ 
 
  private
 

@@ -7,8 +7,18 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <div class = "container">
+    <div class = "jumbotron">
+      <div class="row navbar">
+        <%= render partial: 'user_sessions/navbar'%>
+      </div>
+      <h1>Holy Socks, Batman!</h5>
+    </div>
+  </div>
 
+<div class = "container">
 <%= yield %>
+</div>
 <div class="modal fade" id="new_user" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -30,10 +40,9 @@
         <h4 class="modal-title" id="myModalLabel">Sign In</h4>
       </div>
       <div class="modal-body" id = "signin_form">
-        <%= render partial: 'users/form_signin' %>
+        <%= render partial: 'users/form_sign_in' %>
       </div>
     </div>
   </div>
-</div>
 </body>
 </html>
