@@ -9,6 +9,7 @@ def index
     @user_session = UserSession.new
   end
   @socks=Sock.all
+  @sock=Sock.new
 end
 
 def show
