@@ -1,3 +1,2 @@
-$('#feedbackModal').modal('hide');
-document.getElementById("new_feedback").reset();
-$('.alert').remove();
+$('#feedbackModal').modal('toggle');
+$('.modal-body').html('<%=j render partial: 'shared/feedback_form' %>')
