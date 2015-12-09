@@ -9,12 +9,12 @@ class UserSessionsController < ApplicationController
     @user_session = UserSession.new(params[:user_session])
     if @user_session.save
       respond_to do |format|
-        format.html root_url
+        format.html {root_url}
         format.js { }
       end
     else
       respond_to do |format|
-          format.html root_url
+          format.html {root_url}
           format.js {render 'errors'}
         end
     end
