@@ -1,24 +1,29 @@
 
 <div class="container-fluid">
-  <div class="">
-    <% @items.each do |i| %>
-    <div class="col-xs-3 center-block">
+
+  <% @items.each do |i| %>
+  <div class="row item-row">
+    <div class="col-xs-2">
       <%=image_tag(i.sock.img_url, class:"img-responsive center-block cart-images") %>
     </div>
-    <div class="col-xs-3">
+    <div class="col-xs-2">
       <div class="col-xs-10 col-xs-offset-1">
         <p>Name: <%= i.sock.name %></p>
       </div>
       <div class="col-xs-10 col-xs-offset-1">
         <p>Material: <%=i.sock.material%></p>
       </div>
-      <div class="col-xs-10 col-xs-offset-1">
-        <p>Price: $<%=i.sock.price%></p>
-      </div>
-      <div class="col-xs-10 col-xs-offset-1">
-        <p>Quantity: <%=i.quantity%></p>
-      </div>
     </div>
-    <% end %>
+    <div class="col-xs-2">
+      <p>Price: <%=number_to_currency(i.sock.price)%></p>
+    </div>
+    <div class="col-xs-2">
+      <p>Quantity: <%=i.quantity%></p>
+    </div>
+    <div class="col-xs-2">
+      <p>Item Total: <%=number_to_currency(i.sock.price * i.quantity) %></p>
+    </div>
   </div>
+  <% end %>
+
 </div>
