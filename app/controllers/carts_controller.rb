@@ -1,11 +1,11 @@
 class CartsController < ApplicationController
 
   def index
-    @items = Itme.all
+    @items = Item.all
   end
 
   def create
-    session['cart_id'] = SecureRandom.hex.to_s+created_at.strftime("%Y%m%d%H%M%S")
+    session['cart_id'] = created_at.strftime("%Y%m%d%H%M%S") + SecureRandom.hex
     @cart = Cart.new()
     if current_user_session
       @cart.user = current_user
@@ -16,6 +16,8 @@ class CartsController < ApplicationController
   end
 
   def destroy
+    @cart = Cart.find(params['id'])
+    @cart.destroy
 
   end
 
