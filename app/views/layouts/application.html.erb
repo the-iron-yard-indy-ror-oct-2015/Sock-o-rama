@@ -12,11 +12,15 @@
       <div class="row navbar">
         <%= render partial: 'user_sessions/navbar'%>
       </div>
-      <h1>Holy Socks, Batman!</h5>
       <!--ONlY FOR ADMIN-->
       <div class="nav-right">
       <%=button_to "+ Sock", new_sock_path, class: "btn btn-primary btn-sm"%>
       </div>
+
+      <!-- Button trigger modal -->
+      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#feedbackModal">
+        Feedback
+      </button>
 
       <h1 id="site-title"><%=link_to "Sock-O-Rama!", root_url%></h5>
     </div>
@@ -50,5 +54,20 @@
       </div>
     </div>
   </div>
+</div>
+<!-- Modal -->
+<div class="modal fade" id="feedbackModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="feedbackModalLabel">Submit feedback</h4>
+      </div>
+      <div class="modal-body">
+        <%= render partial: "shared/feedback_form" %>
+      </div>
+    </div>
+  </div>
+</div>
 </body>
 </html>
