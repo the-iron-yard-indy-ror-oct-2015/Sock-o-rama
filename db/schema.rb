@@ -49,6 +49,15 @@ ActiveRecord::Schema.define(version: 20151209195435) do
     t.string   "name"
   end
 
+  create_table "subscription_plans", force: :cascade do |t|
+    t.integer  "amount"
+    t.string   "interval"
+    t.string   "stripe_id"
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "user_sessions", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
