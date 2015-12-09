@@ -6,7 +6,7 @@ class UserTest < ActiveSupport::TestCase
   # end
 
   test "user_create" do
-    user = create(:user)
+    user = build(:user)
     assert user.save, "User was not created"
   end
 
