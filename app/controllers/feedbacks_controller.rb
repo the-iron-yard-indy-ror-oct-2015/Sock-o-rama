@@ -1,5 +1,16 @@
 class FeedbacksController < ApplicationController
 
+  def new
+    respond_to do |format|
+      format.html {
+        redirect_to root_path
+      }
+      format.js {
+        render :partial => "shared/feedback_form"
+      }
+    end
+  end
+
   def create
     @feedback = Feedback.new(feedback_params)
     @feedback.user = current_user
