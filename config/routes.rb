@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :feedbacks
+  resources :feedbacks, only: :create
   resources :carts
   resources :user_sessions
   resources :users
