@@ -1,0 +1,24 @@
+<div class="container-fluid">
+  <div class="col-xs-3 center-block">
+    <%=image_tag(@sock.img_url, class:"img-responsive center-block cart-images") %>
+  </div>
+  <div class="col-xs-3">
+    <div class="col-xs-10 col-xs-offset-1">
+      <p>Name: <%= @sock.name %></p>
+    </div>
+    <div class="col-xs-10 col-xs-offset-1">
+      <p>Material: <%=@sock.material%></p>
+    </div>
+    <div class="col-xs-10 col-xs-offset-1">
+      <p>Price: $<%=@sock.price%></p>
+    </div>
+    <div class="col-xs-10 col-xs-offset-1">
+    <%= bootstrap_form_for(@item) do |f| %>
+      <%= f.number_field :quantity %>
+      <%= f.hidden_field :sock_id, :value => @sock.id %>
+      <%= f.primary "Add to Cart" %>
+    <% end %>
+  </div>
+  </div>
+
+</div>
