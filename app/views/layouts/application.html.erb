@@ -14,7 +14,7 @@
       </div>
       <!--ONlY FOR ADMIN-->
       <div class="nav-right">
-      <%=button_to "+ Sock", new_sock_path, class: "btn btn-primary btn-sm"%>
+      <%= link_to "+ SOCK", "", class: "btn btn-warning btn-sm", "data-toggle" => "modal", "data-target" => "#add-sock-modal"%>
       </div>
 
       <!-- Button trigger modal -->
@@ -55,6 +55,10 @@
     </div>
   </div>
 </div>
+
+<%= render "socks/add_form" %>
+
+
 <!-- Modal -->
 <div class="modal fade" id="feedbackModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog" role="document">
@@ -69,5 +73,6 @@
     </div>
   </div>
 </div>
+
 </body>
 </html>
