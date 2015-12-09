@@ -1,6 +1,11 @@
 <h2> Add a New Sock!</h2>
-
-<%=render "add_form"%>
+<div class="modal fade" id="add-sock-modal" tabindex="-1" role="dialog" aria-labelledby="AddSockLabel">
+<div class="modal-dialog" role="document">
+  <div class="modal-content">
+    <div class="modal-header">
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <h4 class="add-sock-title" id="AddSockLabel">Add Sock</h4>
+    </div>
 
 <%=bootstrap_form_for(@sock, remote: true) do |f|%>
   <div class="field">
@@ -38,3 +43,6 @@
     <%= f.submit "Add Sock!", class: "btn btn-primary btn-lg" %>
   </div>
 <%end%>
+</div>
+</div>
+</div>

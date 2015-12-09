@@ -18,14 +18,18 @@
         <div class="field">
           <%= f.text_field :style %>
         </div>
-        <div class="field">
-          <%= f.text_field :material %>
+        <div class= "col-xs-4">
+          <div class="field">
+            <%= f.select :material, ["Acrylic","Alpaca","Cotton","Fleece","Rayon","Wool","Yak Hair"] %>
+          </div>
         </div>
-        <div class="field">
-          <%= f.text_field :color %>
+        <div class= "col-xs-4">
+          <div class="field">
+             <%= f.select :color, ['Red','Orange',"Yellow","Green","Blue","Purple","Grey","Khaki","Black","Patterned"]  %>
+          </div>
         </div>
         <div class="form-group">
-        <div class= "col-xs-5">
+        <div class= "col-xs-4">
          <label>Amount</label>
             <div class="input-group">
              <div class="input-group-addon">$</div>
@@ -34,7 +38,7 @@
             </div>
           </div>
         </div>
-        <div class= "col-xs-5">
+        <div class= "col-xs-4">
           <div class="field">
             <%= f.text_field :inventory, placeholder: "ID #" %>
           </div>
