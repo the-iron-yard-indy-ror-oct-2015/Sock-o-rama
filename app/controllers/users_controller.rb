@@ -12,6 +12,7 @@ before_filter :require_user, :only => [ :edit, :update]
 
  def create
    @user = User.new(user_params)
+   @user.cart = Cart.new
    if @user.save
      respond_to do |format|
        format.html { redirect_to root_url, notice: 'User was successfully created.' }
@@ -41,7 +42,7 @@ before_filter :require_user, :only => [ :edit, :update]
       end
     end
  end
- 
+
 
  private
 
