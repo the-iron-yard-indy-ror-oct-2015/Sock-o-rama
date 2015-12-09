@@ -7,6 +7,6 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 sock = Sock.create(
   [
-    {name:"The Silk Sock", size:"small", material:"silk", color:"red", price:11.50, inventory:6, style:"ankle"}
+    {name:"The Silk Sock", size:"small", material:"silk", color:"red", price:11.50, inventory:6, style:"ankle", img_url:"http://www.jasminesilk.com/prodzoomimg227.jpg"}
   ]
 )

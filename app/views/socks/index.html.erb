@@ -6,4 +6,5 @@
     <%=s.material%>
     <%=s.price%>
   </div>
+  <%= link_to "Add to Cart!", new_item_path(id:s.id), class:"btn btn-primary"%>
   <%end%>
