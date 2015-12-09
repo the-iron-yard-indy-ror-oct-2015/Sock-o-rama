@@ -5,3 +5,8 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+sock = Sock.create(
+  [
+    {name:"The Silk Sock", size:"small", material:"silk", color:"red", price:11.50, inventory:6, style:"ankle"}
+  ]
+)

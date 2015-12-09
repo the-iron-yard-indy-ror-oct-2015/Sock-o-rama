@@ -1,16 +1,29 @@
 class ItemsController < ApplicationController
 
-  def update
-  end
-
   def create
     @item = Item.new(item_params)
-    @item.save!
+    if @item.save
+      flash[:notice]="The item was added to your cart! Nice!"
+      redirect_to carts_path
+    else
+      flash[:notice]="Uh Oh, something went wrong."
+      redirect_to new_item_path
+    end
   end
 
-  def new
-    @item = Item.new
+  def edit
+    @item = Item.find(params['id'])
+  end
 
+  def update
+    @item = Item.find(params['id'])
+    if @item.update(item_params)
+      flash[:notice]="The item was added to your cart! Nice!"
+      redirect_to carts_path
+    else
+      flash[:notice]="Uh Oh, something went wrong."
+      redirect_to new_item_path
+    end
   end
 
   def destroy
