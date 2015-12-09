@@ -16,6 +16,7 @@ class ItemsController < ApplicationController
       flash[:notice]="Uh Oh, something went wrong."
       redirect_to new_item_path
     end
+    update_cart
   end
 
   def edit

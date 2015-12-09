@@ -1,5 +1,7 @@
 class CartsController < ApplicationController
 
+  after_action :update_cart
+
   def index
     @cart = current_user.cart
     @items = @cart.items
@@ -22,6 +24,13 @@ class CartsController < ApplicationController
 
   end
 
+  private
 
+  def update_cart
+    @cart.total = 0.0
+    @cart.items.each do |i|
+      @cart.total += i.sock.price * i.quantity
+    end
+  end
 
 end
