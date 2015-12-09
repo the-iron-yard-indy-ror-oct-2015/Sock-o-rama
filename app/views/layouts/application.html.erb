@@ -7,7 +7,7 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <div class = "container">
+
     <div class = "jumbotron">
       <div class="row navbar">
         <%= render partial: 'user_sessions/navbar'%>
@@ -17,14 +17,9 @@
       <%= link_to "+ SOCK", "", class: "btn btn-warning btn-sm", "data-toggle" => "modal", "data-target" => "#add-sock-modal"%>
       </div>
 
-      <!-- Button trigger modal -->
-      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#feedbackModal">
-        Feedback
-      </button>
-
       <h1 id="site-title"><%=link_to "Sock-O-Rama!", root_url%></h5>
     </div>
-  </div>
+
 
 <div class = "container">
 <%= yield %>
