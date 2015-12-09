@@ -46,5 +46,9 @@ class ApplicationController < ActionController::Base
       end
     end
 
+    def sock_setter
+      @sock = Sock.new
+    end
+
 
 end

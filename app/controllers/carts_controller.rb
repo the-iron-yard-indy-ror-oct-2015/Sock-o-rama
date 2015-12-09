@@ -1,6 +1,6 @@
 class CartsController < ApplicationController
 
-
+  before_action :sock_setter
 
   def index
     @cart = current_user.cart
@@ -22,4 +22,12 @@ class CartsController < ApplicationController
     @cart = Cart.find(params['id'])
     @cart.destroy
   end
+
+  private
+
+
+  def sock_setter
+    @sock = Sock.new
+  end
+
 end
