@@ -1,6 +1,11 @@
 <h2> Add a New Sock!</h2>
 
-<%=bootstrap_form_for(@sock) do |f|%>
+<%=render "add_form"%>
+
+<%=bootstrap_form_for(@sock, remote: true) do |f|%>
+  <div class="field">
+    <%= f.text_field :name %>
+  </div>
   <div class="field">
     <%= f.text_field :img_url %>
   </div>

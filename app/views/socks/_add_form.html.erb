@@ -1,0 +1,51 @@
+<!-- gif Modal -->
+<div class="modal fade" id="add-sock-modal" tabindex="-1" role="dialog" aria-labelledby="AddSockLabel">
+<div class="modal-dialog" role="document">
+  <div class="modal-content">
+    <div class="modal-header">
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <h4 class="add-sock-title" id="AddSockLabel">Add Sock</h4>
+    </div>
+
+    <div class="modal-body">
+      <%=bootstrap_form_for(@sock, remote: true) do |f|%>
+        <div class="field">
+          <%= f.text_field :name %>
+        </div>
+        <div class="field">
+          <%= f.text_field :img_url %>
+        </div>
+        <div class="field">
+          <%= f.text_field :style %>
+        </div>
+        <div class="field">
+          <%= f.text_field :material %>
+        </div>
+        <div class="field">
+          <%= f.text_field :color %>
+        </div>
+        <div class="form-group">
+        <div class= "col-xs-5">
+         <label>Amount</label>
+            <div class="input-group">
+             <div class="input-group-addon">$</div>
+             <input type="float" class="form-control" id="exampleInputAmount" placeholder="Dollars">
+             <div class="input-group-addon">.00</div>
+            </div>
+          </div>
+        </div>
+        <div class= "col-xs-5">
+          <div class="field">
+            <%= f.text_field :inventory, placeholder: "ID #" %>
+          </div>
+        </div>
+        <br>
+        <div class="actions">
+          <%= f.submit "Add Sock!", class: "btn btn-primary btn-lg" %>
+        </div>
+      <%end%>
+    </div>
+
+</div>
+</div>
+</div>

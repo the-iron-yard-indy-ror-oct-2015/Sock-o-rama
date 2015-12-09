@@ -1,10 +1,13 @@
 <h2 class = "page-title">Sock it to me!</h2>
-<%@socks.each do |s|%>
-  <div class= "col-xs-4">
-    <%=s.name%><br>
-    <%=image_tag(s.img_url)%><br>
-    <%=s.material%>
-    <%=s.price%>
-  </div>
-  <%= link_to "Add to Cart!", new_item_path(id:s.id), class:"btn btn-primary"%>
-  <%end%>
+<div class="row">
+  <%@socks.each do |s|%>
+    <div class= "col-xs-4">
+      <%=s.name%><br>
+      <%=image_tag(s.img_url, class: "img-responsive")%><br>
+      Material: <%=s.material%><br>
+      $<%=s.price%>
+      <br>
+      <%= link_to "Add to Cart!", new_item_path(id:s.id), class:"btn btn-warning btn-sm"%>
+    </div>
+    <%end%>
+</div>

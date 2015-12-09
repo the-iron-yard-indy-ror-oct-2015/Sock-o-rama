@@ -15,6 +15,7 @@
       <!--ONlY FOR ADMIN-->
       <div class="nav-right">
       <%=button_to "+ Sock", new_sock_path, class: "btn btn-primary btn-sm"%>
+      <%= link_to "+ SOCK", "socks/new", class: "btn btn-warning btn-sm", "data-toggle" => "modal", "data-target" => "#add-sock-modal"%>
       </div>
 
       <h1 id="site-title"><%=link_to "Sock-O-Rama!", root_url%></h5>
@@ -49,5 +50,11 @@
       </div>
     </div>
   </div>
+</div>
+<%= render "socks/add_form" %>
+
+
+
+
 </body>
 </html>
