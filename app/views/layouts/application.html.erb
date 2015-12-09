@@ -9,22 +9,46 @@
 <body>
   <div class = "container">
     <div class = "jumbotron">
-      <!-- NEEDS LINKED TO LOGIN -->
-      <%=button_to "Login", class: "btn btn-primary btn-lg"%>
-
+      <div class="row navbar">
+        <%= render partial: 'user_sessions/navbar'%>
+      </div>
+      <h1>Holy Socks, Batman!</h5>
       <!--ONlY FOR ADMIN-->
       <div class="nav-right">
       <%=button_to "+ Sock", new_sock_path, class: "btn btn-primary btn-sm"%>
       </div>
 
       <h1 id="site-title"><%=link_to "Sock-O-Rama!", root_url%></h5>
-
-
     </div>
   </div>
 
 <div class = "container">
 <%= yield %>
 </div>
+<div class="modal fade" id="new_user" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Sign Up</h4>
+      </div>
+      <div class="modal-body" id= "signup_form">
+        <%= render partial: 'users/form' %>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="sign_in" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Sign In</h4>
+      </div>
+      <div class="modal-body" id = "signin_form">
+        <%= render partial: 'users/form_sign_in' %>
+      </div>
+    </div>
+  </div>
 </body>
 </html>
