@@ -3,7 +3,7 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
   helper_method :current_user_session, :current_user
-
+  before_action :assign_user
  private
    def current_user_session
      return @current_user_session if defined?(@current_user_session)
@@ -26,6 +26,16 @@ class ApplicationController < ActionController::Base
         if current_user
           flash[:alert]="You are already logged in"
           redirect_to root_url
+        end
+      end
+
+      def assign_user
+        if current_user_session
+          @user = current_user
+          @current_user_session = current_user_session
+        else
+          @user = User.new
+          @current_user_session = UserSession.new
         end
       end
 
