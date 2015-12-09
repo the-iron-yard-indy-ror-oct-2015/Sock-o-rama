@@ -2,7 +2,7 @@ class SocksController < ApplicationController
 
 def index
   if current_user_session
-    @user= curent_user
+    @user= current_user
     @user_session = current_user_session
   else
     @user= User.new

@@ -1,7 +1,14 @@
 class ItemsController < ApplicationController
 
+  def new
+    @item = Item.new
+    @sock = Sock.find(params['id'])
+  end
+
+
   def create
     @item = Item.new(item_params)
+    @item.cart = current_user.cart
     if @item.save
       flash[:notice]="The item was added to your cart! Nice!"
       redirect_to carts_path
@@ -34,6 +41,6 @@ class ItemsController < ApplicationController
   private
 
   def item_params
-    params.require(:item).permit(:sock_id, :cart_id, :quantity)
+    params.require(:item).permit(:sock_id, :quantity)
   end
 end
