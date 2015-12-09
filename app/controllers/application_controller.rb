@@ -38,17 +38,7 @@ class ApplicationController < ActionController::Base
         @user = User.new
         @user_session = UserSession.new
       end
-
     end
 
-      def assign_user
-        if current_user_session
-          @user = current_user
-          @current_user_session = current_user_session
-        else
-          @user = User.new
-          @current_user_session = UserSession.new
-        end
-      end
 
 end
