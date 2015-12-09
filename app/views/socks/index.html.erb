@@ -1,4 +1,9 @@
-<%=@socks.each do |s|%>
-  <%=s.style%>
-  <%=s.inventory%>
+<h2 class = "page-title">Sock it to me!</h2>
+<%@socks.each do |s|%>
+  <div class= "col-xs-4">
+    <%=s.name%><br>
+    <%=image_tag(s.img_url)%><br>
+    <%=s.material%>
+    <%=s.price%>
+  </div>
   <%end%>

@@ -9,8 +9,17 @@
 <body>
   <div class = "container">
     <div class = "jumbotron">
-      <%=button_to "Login", "btn btn-primary btn-lg"%>
-      <h1>Holy Socks, Batman!</h5>
+      <!-- NEEDS LINKED TO LOGIN -->
+      <%=button_to "Login", class: "btn btn-primary btn-lg"%>
+
+      <!--ONlY FOR ADMIN-->
+      <div class="nav-right">
+      <%=button_to "+ Sock", new_sock_path, class: "btn btn-primary btn-sm"%>
+      </div>
+
+      <h1 id="site-title"><%=link_to "Sock-O-Rama!", root_url%></h5>
+
+
     </div>
   </div>
 
