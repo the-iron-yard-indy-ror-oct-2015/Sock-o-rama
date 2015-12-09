@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'socks#index'
 
-  post '/socks/new' => "socks#new" 
+  post '/socks/new' => "socks#new"
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
