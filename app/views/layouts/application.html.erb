@@ -13,6 +13,12 @@
         <%= render partial: 'user_sessions/navbar'%>
       </div>
       <h1>Holy Socks, Batman!</h5>
+      <!--ONlY FOR ADMIN-->
+      <div class="nav-right">
+      <%=button_to "+ Sock", new_sock_path, class: "btn btn-primary btn-sm"%>
+      </div>
+
+      <h1 id="site-title"><%=link_to "Sock-O-Rama!", root_url%></h5>
     </div>
   </div>
 

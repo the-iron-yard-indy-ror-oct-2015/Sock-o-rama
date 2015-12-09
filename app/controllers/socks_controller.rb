@@ -19,12 +19,17 @@ end
 
 def create
   @sock = Sock.new(sock_params)
-  @sock.save!
+  if @sock.save!
+    flash[:notice]="New pair added! Nice!"
+    redirect_to root_url
+  else
+    flash[:notice]="Hm. Something is missing. Try again."
+    render new
+  end
 end
 
 def new
   @sock = Sock.new
-
 end
 
 def destroy
