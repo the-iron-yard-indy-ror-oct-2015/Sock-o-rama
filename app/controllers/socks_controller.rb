@@ -37,6 +37,9 @@ def new
 end
 
 def destroy
+  @sock=Sock.find(params[:id])
+  @sock.destroy
+  redirect_to root_url
 end
 
 private

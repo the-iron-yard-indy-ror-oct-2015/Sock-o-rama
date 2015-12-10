@@ -8,6 +8,7 @@
       $<%=s.price%>
       <br>
       <%= link_to "Add to Cart!", new_item_path(id:s.id), class:"btn btn-warning btn-sm"%>
+      <%= link_to "Destroy", sock_path, method: :delete%>
     </div>
     <%end%>
 </div>
