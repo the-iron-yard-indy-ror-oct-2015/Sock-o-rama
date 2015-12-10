@@ -2,8 +2,10 @@
 <div class="row">
   <%@socks.each do |s|%>
     <div class= "col-xs-4">
-      <%=s.name%><br>
+      <%=link_to s do %><br>
+      <%= s.name %>
       <%=image_tag(s.img_url, class: "img-responsive")%><br>
+      <% end %>
       Material: <%=s.material%><br>
       $<%=s.price%>
       <br>
