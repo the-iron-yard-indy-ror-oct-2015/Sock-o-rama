@@ -11,13 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151209143712) do
+ActiveRecord::Schema.define(version: 20151209195435) do
 
   create_table "carts", force: :cascade do |t|
     t.integer  "sock_id"
     t.integer  "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+    t.float    "total",      default: 0.0
   end
 
   create_table "feedbacks", force: :cascade do |t|
@@ -45,6 +46,7 @@ ActiveRecord::Schema.define(version: 20151209143712) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string   "img_url"
+    t.string   "name"
   end
 
   create_table "subscription_plans", force: :cascade do |t|
