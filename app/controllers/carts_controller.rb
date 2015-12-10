@@ -16,6 +16,12 @@ class CartsController < ApplicationController
     @items = @cart.items
   end
 
+  def show
+    @cart = Cart.friendly.find(params[:id])
+    @items = @cart.items
+    render 'index'
+  end
+
   def create
     @cart = Cart.new()
     @cart.name = "#{Time.now.strftime("%Y%m%d%H%M%S")}#{SecureRandom.hex}"
