@@ -13,6 +13,7 @@ def index
 end
 
 def show
+  @sock = Sock.friendly.find(params[:id])
 end
 
 def update
