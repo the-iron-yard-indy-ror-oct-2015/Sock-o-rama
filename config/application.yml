@@ -11,3 +11,5 @@
 #   stripe_publishable_key: pk_live_9lcthxpSIHbGwmdO941O1XVU
 PUBLISHABLE_KEY: pk_test_KD8t9Gs0ZznMpO4mJ6U9LqwV
 SECRET_KEY: sk_test_QSr4fmvTRTztQ16M86wiJyIn
+
+admin_email: chris.vannoy@theironyard.com
