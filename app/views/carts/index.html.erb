@@ -25,6 +25,12 @@
     <div class="col-xs-2">
       <p>Item Total: <%=number_to_currency(i.sock.price * i.quantity) %></p>
     </div>
+    <div class="col-xs-1">
+      <%= link_to "Remove", i , method: :delete, class:"btn-sm btn-primary center-block" %>
+    </div>
+    <div class="col-xs-1">
+      <%= link_to "Update", edit_item_path(id:i.id), class:"btn-sm btn-warning center-block" %>
+    </div>
   </div>
   <% end %>
   <div class="row total-row">

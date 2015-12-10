@@ -21,6 +21,8 @@ class ItemsController < ApplicationController
 
   def edit
     @item = Item.find(params['id'])
+    @sock= @item.sock
+    render 'new'
   end
 
   def update
@@ -37,6 +39,7 @@ class ItemsController < ApplicationController
   def destroy
     @item = Item.find(params['id'])
     @item.destroy
+    redirect_to carts_path
   end
 
   private
