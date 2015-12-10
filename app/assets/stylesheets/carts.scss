@@ -1,3 +1,13 @@
 // Place all the styles related to the Carts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.item-row{
+  border-bottom: 1px solid #ccc;
+  padding: 3px 0 10px 0;
+}
+.total-row{
+  background-color: #ccc;
+  margin-bottom:30px;
+  min-height: 50px;
+}

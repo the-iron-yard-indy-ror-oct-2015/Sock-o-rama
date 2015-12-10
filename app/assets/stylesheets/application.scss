@@ -13,8 +13,12 @@
 
  */
 
+
  @import "bootstrap-sprockets";
  @import "bootstrap";
+ @import "carts";
+ @import "items";
+ @import "socks";
 
  .jumbotron{
    padding-top: 0px;
