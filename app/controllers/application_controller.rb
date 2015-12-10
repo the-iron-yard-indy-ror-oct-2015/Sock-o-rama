@@ -3,7 +3,7 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
   helper_method :current_user_session, :current_user
-  before_action :assign_user, :feedback_checker
+  before_action :assign_user, :feedback_checker, :select_cart
 
  private
    def current_user_session
@@ -46,5 +46,18 @@ class ApplicationController < ActionController::Base
       end
     end
 
+    def sock_setter
+      @sock = Sock.new
+    end
 
+    def select_cart
+      if current_user_session
+        @cart = current_user.cart
+      elsif session['cart_id']
+        @cart = Cart.find(session['cart_id'])
+      else
+        @cart = Cart.new
+        session['cart_id'] = @cart.id
+      end
+    end
 end
