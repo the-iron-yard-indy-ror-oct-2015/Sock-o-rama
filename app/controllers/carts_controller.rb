@@ -9,6 +9,7 @@ class CartsController < ApplicationController
       @cart = Cart.find(session['cart_id'])
     else
       @cart = Cart.new
+      @cart.name = "#{Time.now.strftime("%Y%m%d%H%M%S")}#{SecureRandom.hex}"
       @cart.save!
       session['cart_id'] = @cart.id
     end
@@ -17,10 +18,11 @@ class CartsController < ApplicationController
 
   def create
     @cart = Cart.new()
+    @cart.name = "#{Time.now.strftime("%Y%m%d%H%M%S")}#{SecureRandom.hex}"
     if current_user_session
       @cart.user = current_user
     end
-    @cart.save
+    @cart.save!
   end
 
   def destroy

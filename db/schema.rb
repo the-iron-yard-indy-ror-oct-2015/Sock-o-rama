@@ -11,14 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151210022535) do
+ActiveRecord::Schema.define(version: 20151210025126) do
 
   create_table "carts", force: :cascade do |t|
     t.integer  "sock_id"
     t.integer  "user_id"
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
-    t.integer  "total",      default: 0
+    t.string   "name"
+    t.string   "permalink"
+    t.integer  "price",      default: 0
   end
 
   create_table "feedbacks", force: :cascade do |t|
