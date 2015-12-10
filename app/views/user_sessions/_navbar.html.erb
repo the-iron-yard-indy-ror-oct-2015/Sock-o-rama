@@ -5,6 +5,9 @@
       <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#feedbackModal">
         Feedback
       </button>
+      <%= link_to(@cart, class:"btn btn-primary btn-medium") do %>
+        <span class="glyphicon glyphicon-shopping-cart"></span>
+      <% end %>
 
       <% if current_user.name == "admin"%>
         <%= link_to "+ SOCK", "", class: "btn btn-warning btn-medium", "data-toggle" => "modal", "data-target" => "#add-sock-modal"%>
@@ -12,5 +15,8 @@
   <% else %>
       <button type="button" class="btn btn-primary btn-medium sign_up_button" data-toggle="modal" data-target="#new_user">Create an Account</button>
       <button type="button" class="btn btn-primary btn-medium sign_in_button" data-toggle="modal" data-target="#sign_in">Sign In</button>
+      <%= link_to(@cart, class:"btn btn-primary btn-medium") do %>
+        <span class="glyphicon glyphicon-shopping-cart"></span>
+      <% end %>
   <% end %>
   </div>
