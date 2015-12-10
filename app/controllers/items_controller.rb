@@ -29,6 +29,7 @@ class ItemsController < ApplicationController
   def update
     @item = Item.find(params['id'])
     if @item.update(item_params)
+      update_cart
       flash[:notice]="The item was added to your cart! Nice!"
       redirect_to carts_path
     else
@@ -51,10 +52,11 @@ class ItemsController < ApplicationController
   end
 
   def update_cart
-    total = 0
+    price = 0
     @cart.items.each do |i|
-      total = total + (i.sock.price*i.quantity)
+      price = price + (i.sock.price*i.quantity)
     end
-    @cart.update(total: total)
+    price = price*100
+    @cart.update(price: price)
   end
 end
