@@ -11,5 +11,5 @@
 #   stripe_publishable_key: pk_live_9lcthxpSIHbGwmdO941O1XVU
 
 
-stripe_secret_key: #SOMETHING HERE needs stripe info
-stripe_public_key: #SOMETHING HERE needs stripe info
+STRIPE_SECRET_KEY: sk_test_l2QarDeMsoXHCGVRXzYveBBv
+STRIPE_PUBLISHABLE_KEY: pk_test_ghaAUv2tNxAWWpzK70x8bGcx
