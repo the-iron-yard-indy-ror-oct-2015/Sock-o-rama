@@ -15,8 +15,10 @@
         <div class="field">
           <%= f.text_field :img_url %>
         </div>
-        <div class="field">
-          <%= f.text_field :style %>
+        <div class= "col-xs-4">
+          <div class="field">
+            <%= f.text_field :style %>
+          </div>
         </div>
         <div class= "col-xs-4">
           <div class="field">
@@ -34,7 +36,6 @@
             <div class="input-group">
              <div class="input-group-addon">$</div>
              <input type="float" class="form-control" id="exampleInputAmount" placeholder="Dollars">
-             <div class="input-group-addon">.00</div>
             </div>
           </div>
         </div>
@@ -45,8 +46,9 @@
         </div>
         <br>
         <div class="actions">
-          <%= f.submit "Add Sock!", class: "btn btn-primary btn-lg" %>
+          <%= f.submit "Add Sock!", class: "btn btn-primary btn-lg", id: "add-button"%>
         </div>
+        <br>
       <%end%>
     </div>
 
