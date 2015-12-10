@@ -7,8 +7,9 @@ class ItemsController < ApplicationController
 
 
   def create
+    select_cart
     @item = Item.new(item_params)
-    @item.cart = current_user.cart
+    @item.cart = @cart
     if @item.save
       update_cart
       flash[:notice]="The item was added to your cart! Nice!"
@@ -39,6 +40,7 @@ class ItemsController < ApplicationController
   def destroy
     @item = Item.find(params['id'])
     @item.destroy
+    update_cart
     redirect_to carts_path
   end
 
@@ -49,11 +51,10 @@ class ItemsController < ApplicationController
   end
 
   def update_cart
-    cart = Cart.find(@item.cart.id)
     total = 0
-    cart.items.each do |i|
+    @cart.items.each do |i|
       total = total + (i.sock.price*i.quantity)
     end
-    cart.update(total: total)
+    @cart.update(total: total)
   end
 end
