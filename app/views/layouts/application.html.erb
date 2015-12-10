@@ -13,17 +13,9 @@
         <div class="row navbar">
           <%= render partial: 'user_sessions/navbar'%>
         </div>
-      <!--ONlY FOR ADMIN-->
-        <div class="nav-right">
-          <%= link_to "+ SOCK", "", class: "btn btn-warning btn-sm", "data-toggle" => "modal", "data-target" => "#add-sock-modal"%>
-        </div>
-
-      <!-- Button trigger modal -->
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#feedbackModal">
-        Feedback
-        </button>
+        <h1 id="site-title"><%=link_to "Sock-O-Rama!", root_url, id: "site-title"%></h1>
+        <h5 id="site-subtitle">The one-stop online shop for cozy, cool feet fashion since 2015!</h5>
       </div>
-        <h1 id="site-title"><%=link_to "Sock-O-Rama!", root_url%></h5>
     </div>
 
 
