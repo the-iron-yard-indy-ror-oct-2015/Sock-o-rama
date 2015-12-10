@@ -9,7 +9,5 @@
 # production:
 #   stripe_api_key: sk_live_EeHnL644i6zo4Iyq4v1KdV9H
 #   stripe_publishable_key: pk_live_9lcthxpSIHbGwmdO941O1XVU
-
-
-STRIPE_SECRET_KEY: sk_test_l2QarDeMsoXHCGVRXzYveBBv
-STRIPE_PUBLISHABLE_KEY: pk_test_ghaAUv2tNxAWWpzK70x8bGcx
+PUBLISHABLE_KEY: pk_test_KD8t9Gs0ZznMpO4mJ6U9LqwV
+SECRET_KEY: sk_test_QSr4fmvTRTztQ16M86wiJyIn
