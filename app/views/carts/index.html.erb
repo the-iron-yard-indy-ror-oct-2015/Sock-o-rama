@@ -35,11 +35,15 @@
   <% end %>
   <div class="row total-row">
     <div class="col-xs-2 col-xs-offset-8">
-      <p>Your Total: <%= number_to_currency(@cart.total) %> </p>
+      <p>Your Total: <%= number_to_currency(@cart.price/100.to_f) %> </p>
     </div>
     <div class="col-xs-2">
-      <%= link_to "Checkout", "#", class:"btn btn-primary center-block" %>
+      <%= render 'payola/transactions/checkout', sellable: @cart %>
     </div>
   </div>
 
 </div>
+<script type="text/javascript" src="https://js.stripe.com/v2/"></script>
+<script type="text/javascript">
+  Stripe.setPublishableKey('pk_test_ghaAUv2tNxAWWpzK70x8bGcx');
+</script>

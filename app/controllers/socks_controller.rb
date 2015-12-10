@@ -22,8 +22,10 @@ end
 def create
   @sock = Sock.new(sock_params)
   if @sock.save!
-    flash[:notice]="New pair added! Nice!"
-    redirect_to root_url
+    respond_to do |format|
+      format.html {redirect_to root_url}
+      format.js{}
+    end
   else
     flash[:notice]="Hm. Something is missing. Try again."
     render new

@@ -1,9 +1,16 @@
+<div class= "signin">
   <% if current_user %>
-<div class= "col-xs-offset-8 signin">
-  <span>Welcome, <%= current_user.name %></span>
-    <%= link_to "Log Out", user_session_path(current_user),method: :delete, :class => "btn btn-medium btn-primary" %>
-  </div>
+      <span>Welcome, <%= current_user.name.titleize %>!</span>
+      <%= link_to "Log Out", user_session_path(current_user),method: :delete, :class => "btn btn-medium btn-primary" %>
+      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#feedbackModal">
+        Feedback
+      </button>
+
+      <% if current_user.name == "admin"%>
+        <%= link_to "+ SOCK", "", class: "btn btn-warning btn-medium", "data-toggle" => "modal", "data-target" => "#add-sock-modal"%>
+      <%end%>
   <% else %>
-    <button type="button" class="btn btn-primary btn-lg sign_up_button" data-toggle="modal" data-target="#new_user">Create an Account</button>
-    <button type="button" class="btn btn-primary btn-lg sign_in_button" data-toggle="modal" data-target="#sign_in">Sign In</button>
+      <button type="button" class="btn btn-primary btn-medium sign_up_button" data-toggle="modal" data-target="#new_user">Create an Account</button>
+      <button type="button" class="btn btn-primary btn-medium sign_in_button" data-toggle="modal" data-target="#sign_in">Sign In</button>
   <% end %>
+  </div>
