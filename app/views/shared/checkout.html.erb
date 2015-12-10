@@ -1,0 +1,15 @@
+<div class="container">
+ <h3>Thanks for your order, <%= @current_user.name %>!</h3>
+ <div class="container">
+   <h5>Your order of:</h5>
+    <ul>
+      <% @cart.each do |item| %>
+        <li><%= item.name %></li>
+      <% end %>
+    </ul>
+    <p>will ship soon. A receipt has been sent to your e-mail.</p>
+ </div>
+ <div class="container">
+   <%= link_to root_path, "Home" %>
+ </div>
+</div>
