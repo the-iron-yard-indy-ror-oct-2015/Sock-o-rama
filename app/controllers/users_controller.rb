@@ -13,7 +13,8 @@ before_filter :require_user, :only => [ :edit, :update]
  def create
    @user = User.new(user_params)
    @user.cart = Cart.new
-   @user.cart.update(name:"#{created_at.strftime("%Y%m%d%H%M%S")}#{SecureRandom.hex}")
+   @user.cart.name = "#{Time.now.strftime("%Y%m%d%H%M%S")}#{SecureRandom.hex}"
+   @user.cart.save!
    if @user.save
      respond_to do |format|
        format.html { redirect_to root_url, notice: 'User was successfully created.' }
