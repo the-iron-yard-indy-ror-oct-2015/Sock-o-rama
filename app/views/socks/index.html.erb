@@ -1,14 +1,13 @@
 <h2 class = "page-title">Sock it to me!</h2>
 <div class="row">
   <%@socks.each do |s|%>
-    <div class= "col-xs-4">
+    <div class= "col-xs-3">
       <%=link_to s do %><br>
-      <%= s.name %>
+      <h4><%= s.name %></h4><br>
       <%=image_tag(s.img_url, class: "img-responsive")%><br>
       <% end %>
-      Material: <%=s.material%><br>
-      $<%=s.price%>
-      <br>
+      <h5>Material: <%=s.material%><br>
+      $<%=s.price%>0 </h5><br>
       <%= link_to "Add to Cart!", new_item_path(id:s.id), class:"btn btn-warning btn-sm"%>
     </div>
     <%end%>
