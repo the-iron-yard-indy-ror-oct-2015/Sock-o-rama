@@ -9,13 +9,17 @@
 
     <div class="modal-body">
       <%=bootstrap_form_for(@sock, remote: true) do |f|%>
-        <div class="field">
-          <%= f.text_field :name %>
+        <div class= "col-xs-6">
+          <div class="field">
+            <%= f.text_field :name, placeholder: "Name of Sock"%>
+          </div>
         </div>
-        Upload Sock Image:
+        <br>
+        <label>Upload Sock Image:</label>
         <div class="field">
           <%= f.attachment_field :sock_image %>
         </div>
+        <br>
         <div class= "col-xs-4">
           <div class="field">
             <%= f.select :style, ["Full Length", "High", "Ankle", "Low Rise", "Slim"] %>
