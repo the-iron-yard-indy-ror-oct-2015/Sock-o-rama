@@ -1,4 +1,4 @@
 <%= bootstrap_form_for(@feedback, remote: true, authenticity_token: true, label_errors: true) do |x| %>
   <%= x.text_area :body, label: "Comments" %>
-  <span data-dismiss="modal"><%= x.submit "Submit" %></span>
+  <%= x.submit "Submit" %>
 <% end %>
