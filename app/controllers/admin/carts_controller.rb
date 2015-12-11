@@ -7,6 +7,16 @@ module Admin
     #   super
     #   @resources = Cart.all.paginate(10, params[:page])
     # end
+      def current_user_session
+        return @current_user_session if defined?(@current_user_session) && !@current_user_session.nil?
+        @current_user_session = UserSession.find
+      end
+
+      def current_user
+        return @current_user if defined?(@current_user)
+        @current_user = current_user_session && current_user_session.user
+      end
+
 
     # Define a custom finder by overriding the `find_resource` method:
     # def find_resource(param)
