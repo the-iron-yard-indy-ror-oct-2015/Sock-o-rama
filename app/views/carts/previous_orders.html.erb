@@ -16,7 +16,10 @@
         <p>Material: <%=i.sock.material%></p>
       </div>
       <div class="col-xs-10 col-xs-offset-1">
-        <p>Price: $<%=i.sock.price%></p>
+        <p>Price: <%=number_to_currency(i.sock.price)%></p>
+      </div>
+      <div class="col-xs-10 col-xs-offset-1">
+        <p>Price: <%=i.quantity%></p>
       </div>
     </div>
   </div>

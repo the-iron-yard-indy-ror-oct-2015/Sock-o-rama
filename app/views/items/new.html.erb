@@ -10,11 +10,11 @@
       <p>Material: <%=@sock.material%></p>
     </div>
     <div class="col-xs-10 col-xs-offset-1">
-      <p>Price: $<%=@sock.price%></p>
+      <p>Price: <%=number_to_currency(@sock.price)%></p>
     </div>
     <div class="col-xs-10 col-xs-offset-1">
     <%= bootstrap_form_for(@item) do |f| %>
-      <%= f.number_field :quantity %>
+      <%= f.number_field :quantity, min: 0, max: @sock.inventory %>
       <%= f.hidden_field :sock_id, :value => @sock.id %>
       <%= f.primary "Add to Cart" %>
     <% end %>
