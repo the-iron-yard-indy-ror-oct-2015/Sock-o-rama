@@ -10,7 +10,7 @@ class Cart < ActiveRecord::Base
 
   def redirect_path(sale)
     # this could also be a signed S3 url or something
-    '/carts/new
+    '/carts/new'
   end
 
 end
