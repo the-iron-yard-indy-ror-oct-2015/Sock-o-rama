@@ -1,0 +1,13 @@
+Thanks for your Sock-o-Rama order, <%= @cart.user.name %>!
+
+======================================
+
+Your order of:
+
+<% @cart.items.each do |x| %>
+  <%= x.sock.name %>
+<% end %>
+
+will ship soon.
+
+Thanks again for your order. Have a great day!
