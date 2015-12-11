@@ -56,5 +56,23 @@
    float: right;
  }
  #footer{
+   padding-top:20px;
+   padding-bottom: 20px;
    text-align: center;
+ }
+
+ .sock-info{
+   border-left: solid black 1px;
+   background-color:#eee;
+   padding-bottom: 40px;
+ }
+
+ .sock-info-detail{
+   padding: 10px;
+   text-align: left;
+ }
+
+ .addtocartbutton{
+   align: center;
+   padding: 10px;
  }
