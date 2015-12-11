@@ -13,3 +13,4 @@ sock = Sock.create(
     {name:"Black & White Stripes", size:"small", material:"cotton", color:"pattern", price:20.50, inventory:600, style:"high", img_url:"http://www.underwearexpert.com/wp-content/uploads/2014/05/sa01-045_w.png"}
   ]
 )
+user = =User.create([{name:admin, email:admin@sockorama.com}, password:"password", password_confirmation:"password"])
