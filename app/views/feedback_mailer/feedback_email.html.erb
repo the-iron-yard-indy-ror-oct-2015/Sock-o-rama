@@ -2,8 +2,8 @@
   <h3>New customer feedback has been submitted:</h3>
 </div>
 <div class="container">
-  <p><%= @feedback %></p>
+  <p><%= @feedback.body %></p>
 </div>
 <div class="container">
-  <p>This feedback was submitted by <%= @feedback.user %> (<%= @feedback.user.email %>)</p>
+  <p>This feedback was submitted by <%= @feedback.user.name %> (<%= @feedback.user.email %>)</p>
 </div>

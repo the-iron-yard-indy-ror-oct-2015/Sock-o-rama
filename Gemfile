@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-
+ruby "2.2.3"
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.4'
 # Use sqlite3 as the database for Active Record
@@ -16,6 +16,9 @@ gem 'faker'
 gem 'factory_girl_rails'
 gem 'friendly_id'
 gem "administrate", "~> 0.1.2"
+gem "refile", require: "refile/rails"
+gem "refile-mini_magick"
+gem 'remotipart', '~> 1.2'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .coffee assets and views
@@ -35,7 +38,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
-
+gem "refile-s3"
 # Use Unicorn as the app server
 # gem 'unicorn'
 

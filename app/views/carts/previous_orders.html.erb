@@ -1,0 +1,27 @@
+<h1>Your previous orders</h1>
+
+<% @orders.each do |o| %>
+  <div class = "row item-row">
+    <h4>Last Updated:  <%= o.updated_at.strftime("%m/%d/%Y at %I:%M%p") %></h4>
+    <h5>Total Cost: <%= number_to_currency(o.price/100) %> </h5>
+    <% o.items.each do |i| %>
+    <div class="col-xs-3 center-block">
+      <%=image_tag(i.sock.img_url, class:"img-responsive center-block cart-images") %>
+    </div>
+    <div class="col-xs-3">
+      <div class="col-xs-10 col-xs-offset-1">
+        <p>Name: <%= i.sock.name %></p>
+      </div>
+      <div class="col-xs-10 col-xs-offset-1">
+        <p>Material: <%=i.sock.material%></p>
+      </div>
+      <div class="col-xs-10 col-xs-offset-1">
+        <p>Price: <%=number_to_currency(i.sock.price)%></p>
+      </div>
+      <div class="col-xs-10 col-xs-offset-1">
+        <p>Price: <%=i.quantity%></p>
+      </div>
+    </div>
+  </div>
+  <% end %>
+<% end %>

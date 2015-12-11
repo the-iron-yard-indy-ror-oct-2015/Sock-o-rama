@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  mount Payola::Engine => '/payola', as: :payola
   namespace :admin do
     DashboardManifest::DASHBOARDS.each do |dashboard_resource|
       resources dashboard_resource
@@ -7,7 +8,6 @@ Rails.application.routes.draw do
     root controller: DashboardManifest::ROOT_DASHBOARD, action: :index
   end
 
-  mount Payola::Engine => '/payola', as: :payola
   resources :feedbacks, only: :create
   resources :items
   resources :carts
@@ -20,6 +20,8 @@ Rails.application.routes.draw do
 
   # You can have the root of your site routed with "root"
   root 'socks#index'
+
+  get '/previous_orders' => "carts#previous_orders", :as => 'previous_orders'
 
   post '/socks/new' => "socks#new"
 

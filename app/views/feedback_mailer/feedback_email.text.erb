@@ -1,6 +1,6 @@
 New customer feedback has been submitted:
 
 ============================================
-<%= @feedback %>
+<%= @feedback.body %>
 ============================================
-This feedback was submitted by <%= @feedback.user %> (<%= @feedback.user.email %>)
+This feedback was submitted by <%= @feedback.user.name %> (<%= @feedback.user.email %>)
