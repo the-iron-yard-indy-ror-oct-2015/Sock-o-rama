@@ -16,6 +16,21 @@ class CartsController < ApplicationController
     @items = @cart.items
   end
 
+  def new
+    if params['sale_token']==ENV['sale_token']
+      convert_cart_to_order
+    end
+    @cart = Cart.new
+    @cart.name = "#{Time.now.strftime("%Y%m%d%H%M%S")}#{SecureRandom.hex}"
+    @cart.save!
+    if current_user_session
+      current_user.cart = @cart
+    end
+    session['cart_id'] = @cart.id
+    @items = @cart.items
+    render 'index'
+  end
+
   def show
     @cart = Cart.friendly.find(params[:id])
     @items = @cart.items
@@ -39,6 +54,9 @@ class CartsController < ApplicationController
 
   private
 
+  def convert_cart_to_order
+    # we need to create a new class called orders with the same attributes as cart.  User should have many orders.
+  end
 
   def sock_setter
     @sock = Sock.new

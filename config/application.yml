@@ -9,7 +9,7 @@
 # production:
 #   stripe_api_key: sk_live_EeHnL644i6zo4Iyq4v1KdV9H
 #   stripe_publishable_key: pk_live_9lcthxpSIHbGwmdO941O1XVU
-STRIPE_PUBLISHABLE_KEY: pk_test_KD8t9Gs0ZznMpO4mJ6U9LqwV
-STRIPE_SECRET_KEY: sk_test_QSr4fmvTRTztQ16M86wiJyIn
-
+STRIPE_PUBLISHABLE_KEY: pk_test_22ZiYoHHgWaEawwKIIWmKgKt
+STRIPE_SECRET_KEY: sk_test_jar34kdzJEJ4Lgeo0lagoFK6
+sale_token: mKHKgNvAk6rVAdqoU8EjC{Px
 admin_email: chris.vannoy@theironyard.com

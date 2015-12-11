@@ -19,6 +19,15 @@ Payola.configure do |config|
   # config.charge_verifier = lambda do |sale|
   #   raise "Nope!" if sale.email.includes?('yahoo.com')
   # end
+  Payola.configure do |payola|
+    payola.subscribe 'charge.succeeded' do
+      if current_user_session
+        current_user.cart = nil
+      else
+        session['cart_id']=0
+      end
+    end
+  end
 
   # Keep this subscription unless you want to disable refund handling
   config.subscribe 'charge.refunded' do |event|
