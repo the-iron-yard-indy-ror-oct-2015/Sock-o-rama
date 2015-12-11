@@ -11,6 +11,7 @@ before_filter :require_user, :only => [ :edit, :update]
  end
 
  def create
+   @sock = Sock.new
    @user = User.new(user_params)
    @user.cart = Cart.new
    @user.cart.name = "#{Time.now.strftime("%Y%m%d%H%M%S")}#{SecureRandom.hex}"
@@ -26,6 +27,7 @@ before_filter :require_user, :only => [ :edit, :update]
        format.js {render 'errors'}
      end
    end
+
  end
 
  def edit
