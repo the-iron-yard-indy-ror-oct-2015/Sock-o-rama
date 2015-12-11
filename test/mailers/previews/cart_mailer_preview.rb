@@ -2,7 +2,7 @@
 class CartMailerPreview < ActionMailer::Preview
 
   def send
-    CartMailer.receipt_email(Cart.last)
+    CartMailer.receipt_email(Cart.find(2))
   end
 
 end
