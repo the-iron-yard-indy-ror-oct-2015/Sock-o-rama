@@ -13,8 +13,9 @@
           <%= f.hidden_field :quantity, :value => 1 %>
           <%= f.hidden_field :sock_id, :value => s.id %>
           <%= f.primary "Add to Cart"%>
-        <%if current_user && current_user.name == "admin"%>
-          <%= link_to "Destroy", sock_path(id:s.id), method: :delete, class:"btn btn-warning btn-sm"%>
+          <%if current_user && current_user.name == "admin"%>
+            <%= link_to "Destroy", sock_path(id:s.id), method: :delete, class:"btn btn-warning btn-sm"%>
+          <%end%>
         <%end%>
       </div>
     </div>
