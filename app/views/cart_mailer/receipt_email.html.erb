@@ -2,7 +2,12 @@
   <h1>Thanks for your Sock-o-Rama order, <%= @cart.user.name %>!</h1>
 </div>
 <div class="container">
-  <p>Your order of <%= @cart.items %> will ship soon.</p>
+  <p>Your order of: </p>
+  <ul><% @cart.items.each do |x| %>
+    <li><%= x.sock.name %></li>
+    <% end %>
+  </ul>
+  <p>will ship soon.</p>
 </div>
 <div class="container">
   <p>Thanks again for your order. Have a great day!</p>

@@ -8,4 +8,9 @@ class Cart < ActiveRecord::Base
   belongs_to :user
   has_paper_trail
 
+  def redirect_path(sale)
+    # this could also be a signed S3 url or something
+    '/carts/new'
+  end
+
 end
