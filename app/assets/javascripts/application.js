@@ -14,4 +14,5 @@
 //= require payola
 //= require bootstrap-sprockets
 //= require jquery_ujs
+//= require jquery.remotipart
 //= require_tree .
