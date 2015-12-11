@@ -13,7 +13,7 @@ class ItemsController < ApplicationController
     if @item.save
       update_cart
       flash[:notice]="The item was added to your cart! Nice!"
-      redirect_to carts_path
+      redirect_to root_path
     else
       flash[:notice]="Uh Oh, something went wrong."
       redirect_to new_item_path

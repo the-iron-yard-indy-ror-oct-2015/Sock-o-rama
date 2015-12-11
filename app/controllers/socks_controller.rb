@@ -10,10 +10,12 @@ def index
   end
   @socks=Sock.all
   @sock=Sock.new
+  @item = Item.new
 end
 
 def show
   @sock = Sock.friendly.find(params[:id])
+  @item = Item.new
 end
 
 def update
@@ -34,6 +36,7 @@ end
 
 def new
   @sock = Sock.new
+  @item = Item.new
 end
 
 def destroy

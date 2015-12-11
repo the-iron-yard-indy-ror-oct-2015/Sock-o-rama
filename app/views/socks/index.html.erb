@@ -8,7 +8,11 @@
       <% end %>
       <h5>Material: <%=s.material%><br>
       $<%=s.price%>0 </h5><br>
-      <%= link_to "Add to Cart!", new_item_path(id:s.id), class:"btn btn-warning btn-sm"%>
+    <%= bootstrap_form_for(@item) do |f| %>
+      <%= f.hidden_field :quantity, :value => 1 %>
+      <%= f.hidden_field :sock_id, :value => s.id %>
+      <%= f.primary "Add to Cart"%>
+    <% end %>
     </div>
     <%end%>
 </div>

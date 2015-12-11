@@ -13,8 +13,15 @@
   </h4><br>
   Socks remaining in stock: <%= @sock.inventory %><br><br>
 </div>
-<div class = "addtocardbutton">
-  <%= link_to "Add to Cart!", new_item_path(id:@sock.id), class:"btn btn-warning btn-sm"%>
+<div class="col-xs-10 col-xs-offset-1">
+<%= bootstrap_form_for(@item) do |f| %>
+  <%= f.number_field :quantity %>
+  <%= f.hidden_field :sock_id, :value => @sock.id %>
+  <%= f.primary "Add to Cart" %>
+<% end %>
 </div>
+<!--<div class = "addtocardbutton">
+  <%= link_to "Add to Cart!", root_url(quantity:1, id:@sock.id), class:"btn btn-warning btn-sm"%>
+</div>-->
 </div>
 </div>
