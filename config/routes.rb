@@ -21,6 +21,8 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'socks#index'
 
+  get '/previous_orders' => "carts#previous_orders", :as => 'previous_orders'
+
   post '/socks/new' => "socks#new"
 
   # Example of regular route:

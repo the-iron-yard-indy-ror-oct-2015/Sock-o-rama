@@ -17,9 +17,7 @@ class CartsController < ApplicationController
   end
 
   def new
-    if params['sale_token']==ENV['sale_token']
-      convert_cart_to_order
-    end
+    convert_cart_to_order
     @cart = Cart.new
     @cart.name = "#{Time.now.strftime("%Y%m%d%H%M%S")}#{SecureRandom.hex}"
     @cart.save!
@@ -35,6 +33,14 @@ class CartsController < ApplicationController
     @cart = Cart.friendly.find(params[:id])
     @items = @cart.items
     render 'index'
+  end
+
+  def previous_orders
+    if current_user_session
+      @orders = Cart.where('perm_user='+current_user.id.to_s)
+    else
+      @orders = []
+    end
   end
 
   def create
@@ -56,6 +62,17 @@ class CartsController < ApplicationController
 
   def convert_cart_to_order
     # we need to create a new class called orders with the same attributes as cart.  User should have many orders.
+    if current_user_session
+      @cart = current_user.cart
+      @cart.perm_user = current_user.id
+      @cart.save!
+    end
+    price = 0
+    @cart.items.each do |i|
+      price = price + (i.sock.price*i.quantity)
+    end
+    price = price*100
+    @cart.update(price: price)
   end
 
   def sock_setter

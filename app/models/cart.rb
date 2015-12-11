@@ -10,7 +10,7 @@ class Cart < ActiveRecord::Base
 
   def redirect_path(sale)
     # this could also be a signed S3 url or something
-    new_cart_path(sale:ENV['sale_token'])
+    '/carts/new?sale='+ ENV['sale_token']
   end
 
 end
