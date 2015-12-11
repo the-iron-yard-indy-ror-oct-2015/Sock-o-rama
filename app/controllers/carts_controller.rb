@@ -26,7 +26,7 @@ class CartsController < ApplicationController
     end
     session['cart_id'] = @cart.id
     @items = @cart.items
-    render 'index'
+    redirect_to previous_orders_path
   end
 
   def show
