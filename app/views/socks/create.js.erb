@@ -1,5 +1,5 @@
 $("#add-sock-modal").modal("toggle");
 document.getElementById("new_sock").reset();
-$("#socks").prepend("<%=j render @socks %>");
+$("#socks").html("<%=j render @socks %>");
 
 //I have no idea why this creates 4 temporary versions of the upload

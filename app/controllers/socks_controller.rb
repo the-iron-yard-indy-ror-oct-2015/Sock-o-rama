@@ -46,7 +46,7 @@ end
 private
 
 def sock_params
-  params.require(:sock).permit(:name,:img_url, :style, :size, :material, :color, :price, :inventory)
+  params.require(:sock).permit(:name,:sock_image, :style, :size, :material, :color, :price, :inventory)
 end
 
 

@@ -1,8 +1,14 @@
-  <div class= "col-xs-4">
-    <%=@sock.name %><br>
-    <%=image_tag(@sock.img_url, class: "img-responsive")%><br>
-    Material: <%=@sock.material%><br>
-    $<%=@sock.price%>
-    <br>
-    <%= link_to "Add to Cart!", new_item_path(id:@sock.id), class:"btn btn-warning btn-sm"%>
+<div class= "col-xs-3">
+  <div id="each-item">
+    <%=link_to sock do %><br>
+    <h4><%= sock.name %></h4><br>
+    <%=image_tag(sock.type, class: "img-responsive")%><br>
+    <% end %>
+    <h5>Material: <%=sock.material%><br>
+    <%=sock.price%>0 </h5><br>
+    <%= link_to "Add to Cart!", new_item_path(id:sock.id), class:"btn btn-warning btn-sm"%>
+    <%if current_user && current_user.name == "admin"%>
+      <%= link_to "Destroy", sock_path(id:sock.id), method: :delete, class:"btn btn-warning btn-sm"%>
+    <%end%>
   </div>
+</div>
