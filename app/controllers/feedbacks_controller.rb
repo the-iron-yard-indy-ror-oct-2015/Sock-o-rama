@@ -16,6 +16,7 @@ class FeedbacksController < ApplicationController
     @feedback.user = current_user
     if @feedback.save
       redirect_to root_path
+      FeedbackMailer.feedback_email(@feedback).deliver_now
     else
       respond_to do |format|
         format.js {}
