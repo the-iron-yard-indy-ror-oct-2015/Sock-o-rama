@@ -22,6 +22,7 @@ end
 def create
   @sock = Sock.new(sock_params)
   if @sock.save
+    @socks = Sock.all
     respond_to do |format|
       format.html {redirect_to root_url}
       format.js{}
@@ -37,12 +38,15 @@ def new
 end
 
 def destroy
+  @sock=Sock.find(params[:id])
+  @sock.destroy
+  redirect_to root_url
 end
 
 private
 
 def sock_params
-  params.require(:sock).permit(:img_url, :style, :size, :material, :color, :price, :inventory)
+  params.require(:sock).permit(:name,:img_url, :style, :size, :material, :color, :price, :inventory)
 end
 
 
