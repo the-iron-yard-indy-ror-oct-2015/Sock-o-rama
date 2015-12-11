@@ -30,6 +30,11 @@
              <%= f.select :color, ['Red','Orange',"Yellow","Green","Blue","Purple","Grey","Khaki","Black","Patterned"]  %>
           </div>
         </div>
+        <div class= "col-xs-4">
+          <div class="field">
+             <%= f.select :size, ["Small", "Medium", "Large", "Sasquatch"]  %>
+          </div>
+        </div>
         <div class="form-group">
         <div class= "col-xs-4">
            <div class="input-group">
@@ -38,7 +43,7 @@
         </div>
         <div class= "col-xs-4">
           <div class="field">
-            <%= f.text_field :inventory, placeholder: "ID #" %>
+            <%= f.text_field :inventory, placeholder: "Amount Available" %>
           </div>
         </div>
         <br>

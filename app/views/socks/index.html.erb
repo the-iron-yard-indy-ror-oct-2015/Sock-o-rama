@@ -9,7 +9,7 @@
       <h5>Material: <%=s.material%><br>
       $<%=s.price%>0 </h5><br>
       <%= link_to "Add to Cart!", new_item_path(id:s.id), class:"btn btn-warning btn-sm"%>
-      <%if current_user.name == "admin"%>
+      <%if current_user && current_user.name == "admin"%>
         <%= link_to "Destroy", sock_path(id:s.id), method: :delete, class:"btn btn-warning btn-sm"%>
       <%end%>
     </div>
