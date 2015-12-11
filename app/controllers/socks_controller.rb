@@ -21,7 +21,7 @@ end
 
 def create
   @sock = Sock.new(sock_params)
-  if @sock.save!
+  if @sock.save
     respond_to do |format|
       format.html {redirect_to root_url}
       format.js{}
