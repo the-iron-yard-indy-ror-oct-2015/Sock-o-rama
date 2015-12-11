@@ -11,6 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+
 ActiveRecord::Schema.define(version: 20151211154034) do
 
   create_table "carts", force: :cascade do |t|
@@ -21,6 +22,7 @@ ActiveRecord::Schema.define(version: 20151211154034) do
     t.string   "name"
     t.string   "permalink"
     t.integer  "price",      default: 0
+    t.integer  "perm_user"
   end
 
   create_table "feedbacks", force: :cascade do |t|
