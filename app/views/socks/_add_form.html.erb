@@ -12,12 +12,13 @@
         <div class="field">
           <%= f.text_field :name %>
         </div>
+        Upload Sock Image:
         <div class="field">
-          <%= f.text_field :img_url %>
+          <%= f.attachment_field :sock_image %>
         </div>
         <div class= "col-xs-4">
           <div class="field">
-            <%= f.select :style, ["Full Length", "Calf Length", "Ankle", "Low Rise", "Slim"] %>
+            <%= f.select :style, ["Full Length", "High", "Ankle", "Low Rise", "Slim"] %>
           </div>
         </div>
         <div class= "col-xs-4">
