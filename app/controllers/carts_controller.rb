@@ -70,6 +70,7 @@ class CartsController < ApplicationController
     price = 0
     @cart.items.each do |i|
       price = price + (i.sock.price*i.quantity)
+      i.sock.inventory = i.sock.inventory - i.quantity
     end
     price = price*100
     @cart.update(price: price)
